@@ -54,3 +54,36 @@ Once you have completed both of the items above, you will need to submit the lin
 - [Make a ReadMe file Web-based Editor](https://www.makeareadme.com/)
 - [Draw.io Web-based diagramming tool](https://app.diagrams.net/)
 - [Creating Entity Relationship Diagrams using Draw.io](https://www.youtube.com/watch?v=lAtCySGDD48)
+
+
+#Entity Descriptions
+
+STUDENT – A student is a member of the school who attends. A student will consist of ID, name and address.
+INSTRUCTOR – A instructor is a member of the school’s faculty. An instructor will consist of a number, name and faculty group.
+COURSE – A course is a class offered at school. A course consists of a name and numbers.
+SECTION – A section is a subset of a course. A section consists of a number.
+PROFESSOR – a professor is a member of the school’s faculty. A professor will consist of an ID, name and faculty group.
+SEAT – A seat is a option for students. A seat consists of a number and position.
+Relationships
+
+A STUDENT takes zero or more a COURSE, more than one COURSE can be taken by many STUDENT
+A STUDENT fills a SEAT
+An INSTRUCTOR teaches a COURSE, each COURSE can be taught by many INSTRUCTOR
+A COURSE has a SECTION
+SECTION – 
+A PROFESSOR teaches a COURSE, each COURSE can be taught by many PROFESSOR
+SEAT
+
+#Assumptions
+
+1.	Can a student exist without taking a course? Yes
+2.	Would there/could there be a Boolean attribute for online/in-class seats? Yes
+3.	Are there instances where instructors and professors teach the same course and section? Yes
+
+#Cardinality
+Each SEAT can be occupied by at most one STUDENT. SEAT is singular in STUDENT fills SEAT
+Each STUDENT can take many COURSES. COURSES is plural in STUDENT takes COURSE
+Each INSTRUCTOR can teach many COURSES. COURSES is plural in INSTRUCTOR teaches COURSE
+Each PROFESSOR can teach many COURSES. COURSES is plural in PROFESSOR teaches COURSE
+Each COURSE can have many SECTIONS and each SECTION can have many COURSES. A COURSE has a SECTION is bi-directional.
+Each PROFESSOR can teach many SECTIONS. SECTIONS is plural in PROFESSOR teaches SECTION
