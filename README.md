@@ -1,52 +1,55 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9264075&assignment_repo_type=AssignmentRepo)
 # Lab 1 - Conceptual Modeling using Draw.io
-This lab will meet each of the objectives below:
-1. Determine appropriate entity structure for relational databases
 
-2. Apply the correct terminology to an ER Model
+## Dominique Cheris
 
-3. Design an ER model
+<br >
+# Entity Descriptions
 
-## Instructions
-For this lab, you will practice writing business rules that describe the relationship between entities.  Using the school ER diagram below, you will write out each of the relationships between the entities and recreate a conceptual ER diagram illustrating the relationships represented in the diagram below.
+- **STUDENT** – A student is a member of the school who attends. A student will consist of ID, name and address.
+- **INSTRUCTOR** – An instructor is a part of the teaching staff. An instructor will consist of a number, name and faculty group.
+- **COURSE** – A course is a class offered at school. A course consists of a name and number and ID.
+- **SECTION** – A section is a subset of a course offering. A section consists of a number.
+- **PROFESSOR** – a professor is a member of the school’s faculty. A professor will consist of an ID, name and faculty group.
+- **SEAT** – A seat is a course space reservation for students. A seat consists of a number and position.
+- **COURSE SCHEDULE** - A course schedule is a list of a student's enrolled courses. A course schedule will consist of a schedule ID, student ID, student name, course name, and section number.
 
-![alt text](https://instructorc.github.io/site/home/images/school_ERD.PNG)
+<!---
+  # Relationships
 
-You will record your relationships within this readme file.  When writing down the relationships, make sure to adhere to the following bullet points below.
-- Entity names are uppercase and bolded
-- The connecting verb is underlined
-- Bi-direction of the relationship is represented
-
-
-Once you have completed the README.md file, you will create an ER Diagram based on the relationships you have identified from the diagram. You will create the ER Diagram using a free web-based tool titled draw.io.  The shapes you will use to create your ER diagram can be found under the "Entity Relation" tab.  Instructions on how to operate draw.io can be found in the assignment resources section below.
-
-## Requirements
-
-### Deliverable 1 (5 Points)
-All relationships are identified including the relationships that are formed when identifying the new **associative entities**
-
-
-### Deliverable 2 (5 Points)
-The ReadMe.md file is updated to reflect the relationships. The relationships adhere to the following bullet points below.
-- Entity names are uppercase and bolded
-- The connecting verb is underlined
-- Bi-direction of the relationship is represented
+- A **STUDENT** <ins>takes</ins> zero or more a **COURSE**, more than one **COURSE** can be taken by many **STUDENT**
+- A **STUDENT** <ins>fills</ins> a **SEAT**
+- An **INSTRUCTOR** <ins>teaches</ins> a **COURSE**, each **COURSE** can be <ins>taught</ins> by many **INSTRUCTOR**
+- A **COURSE** <ins>has</ins> a **SECTION**
+- **SECTION** – 
+- A **PROFESSOR** <ins>teaches</ins> a **COURSE**, each **COURSE** can be <ins>taught</ins> by many **PROFESSOR**
+- **SEAT**
+--->
 
 
-### Deliverable 3 (5 Points)
-A conceptual Entity Relationship Diagram(ERD) is created to reflect all entities and relationships identified in the write-up
 
-## Submission Guidelines
+# Cardinality
+- A **STUDENT** can <ins>take</ins> zero or more **COURSES**, a **COURSE** can be <ins>taken</ins> by zero or more **STUDENTS**
 
-For this lab, you will submit 2 items to the repository that has been assigned to you.  The two items that you will need to submit are listed below: 
-1. The README.MD file that identifies the various Entities and a brief description of the entity and possible attributes, relationships, and assumptions. 
-   1. When identifying relationships be sure to bold and uppercase the entity name, underline the verb and make sure relationships are bi-directional. 
-   2. When identifying assumptions, make sure to formulate assumptions based on what is represented in the school ERD with either a Yes or No. 
-   3. You can override this README.md file that contains the instructions or extend this README.md file by listing your requirements below the lab Resources section.
+- A **SEAT** can be <ins>filled</ins> by only one **STUDENT**, a **STUDENT** can only <ins>fill</ins> one **SEAT**
 
-2. The draw.io XML file that contains your ER Diagram.  You will also need to take a snippet of the ER Diagram and add it as an image in your Readme file.
+- A **PROFESSOR** can <ins>teach</ins> zero or more **SECTION**, each **SECTION** can be <ins>taught</ins> by one and only one **PROFESSOR**
 
-Once you have completed both of the items above, you will need to submit the link to your repository for assignment 1 prior to the due date and time listed.  Make sure you receive an email confirmation notifying you that the assignment has been submitted.
+- A **COURSE** can be <ins>attributed</ins> one to many **SECTION**, a **SECTION** can be <ins>attributed</ins> to one or many **COURSE**
+
+- An **INSTRUCTOR** can <ins>teach</ins> zero or more **COURSE**, a **COURSE** can be <ins>taught</ins> by one or many **INSTRUCTOR**
+
+- A **COURSE** can be <ins>contained</ins> on zero or more **COURSE LIST**, each **COURSE LIST** can <ins>contain</ins> zero or more **COURSE**
+
+- A **SECTION** can be <ins>contained</ins> on zero or more **COURSE SCHEDULE**, each **COURSE SCHEDULE** can <ins>contain</ins> zero or more **SECTION**
+
+- A **STUDENT** <ins>has</ins>  zero or more **COURSE SCHEDULE**, each **COURSE SCHEDULE** can <ins>have</ins> one and only one **STUDENT**
+
+
+# Assumptions
+
+1.	Can a student exist without taking a course? **YES**
+2.	Would there/could there be a Boolean attribute for online/in-class seats? **YES**
+3.	Are there instances where instructors and professors teach the same course and section? **YES**
 
 
 ## Lab Resources
