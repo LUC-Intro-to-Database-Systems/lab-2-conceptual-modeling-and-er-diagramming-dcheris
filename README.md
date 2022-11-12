@@ -2,8 +2,6 @@
 
 ## Dominique Cheris
 
-Lab 1 Diagram.drawio FINAL.png
-
 <br >
 # Entity Descriptions
 
